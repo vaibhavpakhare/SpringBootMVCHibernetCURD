@@ -69,6 +69,7 @@ public class EmployeeController {
     @DeleteMapping("/employees/{id}")
     public Map < String, Boolean > deleteEmployee(@PathVariable(value = "id") Long employeeId)
     throws ResourceNotFoundException {
+    	System.out.println("inside getmappin to delete  employee of");
         Employee employee = employeeRepository.findById(employeeId)
             .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 
