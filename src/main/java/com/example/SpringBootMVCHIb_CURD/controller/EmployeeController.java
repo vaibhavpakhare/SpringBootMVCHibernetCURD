@@ -47,7 +47,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@Valid @RequestBody Employee employee) {
+    public Employee createEmployee( @RequestBody Employee employee) {
+    	System.out.println("inside post method New posted employee "+employee);
         return employeeRepository.save(employee);
     }
 
@@ -55,7 +56,7 @@ public class EmployeeController {
     public ResponseEntity < Employee > updateEmployee(@PathVariable(value = "id") Long employeeId,
         @Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
     	
-    	System.out.println("inside getmappin to featch  employee of");
+    	System.out.println("inside getmappin to featch ddas  employee of");
         Employee employee = employeeRepository.findById(employeeId)
             .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 
@@ -69,7 +70,7 @@ public class EmployeeController {
     @DeleteMapping("/employees/{id}")
     public Map < String, Boolean > deleteEmployee(@PathVariable(value = "id") Long employeeId)
     throws ResourceNotFoundException {
-    	System.out.println("inside getmappin to delete  employee of");
+    	System.out.println("inside getmappin to delete    jay shree ramevv employee of");
         Employee employee = employeeRepository.findById(employeeId)
             .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
 

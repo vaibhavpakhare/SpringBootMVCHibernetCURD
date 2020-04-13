@@ -20,7 +20,13 @@ public class Employee {
 
     }
 
-    public Employee(String firstName, String lastName, String emailId) {
+    @Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
+				+ "]";
+	}
+
+	public Employee(String firstName, String lastName, String emailId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailId = emailId;
